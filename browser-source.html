@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>Wyświetl tekst na ekranie - warstwa OBS</title>
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,900&display=swap" rel="stylesheet">
+	<style>*,*::before,*::after{box-sizing:border-box}ul[class],ol[class]{padding:0}body,h1,h2,h3,h4,p,ul[class],ol[class],li,figure,figcaption,blockquote,dl,dd{margin:0}body{min-height:100vh;scroll-behavior:smooth;text-rendering:optimizeSpeed;line-height:1.5}ul[class],ol[class]{list-style:none}a:not([class]){text-decoration-skip-ink:auto}img{max-width:100%;display:block}article>*+*{margin-top:1em}input,button,textarea,select{font:inherit}
+	body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0 2em 1em;
+}
+
+	#line:not(:empty){
+	font-family: 'Lato', sans-serif;
+	font-size: 2.2em;
+	font-weight:900;
+	line-height: 1.4;
+	color: #fff;
+	background:rgba(0,0,0,.5);
+	text-shadow: 2px 2px 3px #0000009c;
+	text-align: center;
+	padding:.25em .5em;
+	border-radius:.2em;
+}
+	</style>
+  </head>
+  <body>
+    <div id="line"></div>
+	
+	<script>
+	window.addEventListener('storage', readStorage);
+		
+
+		
+		
+		function readStorage(){
+		let data = JSON.parse(window.localStorage.getItem('OBSline'));
+		let verse=data.data;
+		let status=data.status;
+		console.log(status);
+		
+		
+		if (status == 'showVerse') {
+				document.querySelector('#line').innerHTML = verse;
+			};
+		if (status == 'hideVerse') {
+				document.querySelector('#line').innerHTML = '';
+			}
+				
+
+			
+		}
+			
+		
+	</script>
+  </body>
+</html>
+
