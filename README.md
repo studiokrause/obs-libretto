@@ -10,7 +10,7 @@ This feature is especially useful for displaying converted dialog lists.
 
 You can use the plug-in, for example, to display a libretto, translations of performances, product descriptions, etc.
 
-License: MIT. You can freely modify the plugin files. Use and modification: at your own risk.
+Developed under MIT license. You can freely modify the plugin files. Use and modification: at your own risk.
 
 -------------
 
